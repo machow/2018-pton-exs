@@ -4,7 +4,7 @@ node_js:
 install: >
     git clone -b feat-normal-exs https://github.com/datacamp/docwhat.git
     && cd docwhat
-    && npm install git+https://github.com/datacamp/teach-parser.git#982a48579089cd4c446f7a1cebdd9ebbd669dedb
+    && npm install git+https://$GITHUB_TOKEN@github.com/datacamp/teach-parser.git#982a48579089cd4c446f7a1cebdd9ebbd669dedb
     && npm install
     && npm run build
     && cd ..
