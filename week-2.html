@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en"><head><title>docwhat</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><style>/* temporary rule, since teach-parser uses markdown-js,
+   which does not wrap code blocks in <pre>
+*/
+code {
+    white-space: pre-wrap;
+}
+
+.sidebar { 
+    position: fixed;
+    top: 61px;
+    width: 250px;
+}
+
+.with-sidebar {
+    position: relative;
+    margin-left: 290px;
+    max-width: 650px;
+}
+
+.menu-root {
+    list-style-type: none;
+    line-height: 1.8em;
+}
+
+.menu-sub {
+    list-style-type: none;
+    line-height: 1.8em;
+    padding-left: 1em;
+}
+
+.dc-lite-example {
+    border: solid lightgrey 1px;
+    /*
+    border-top: solid lightgrey 1px;
+    border-bottom: solid lightgrey 1px;
+    */
+    border-radius: 10px;
+    padding: 15px;
+    width: 657px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.instructions h3 {
+    font-size: 20px;
+}
+
+/*
+.section-link {
+    font-size: .85em;
+}
+*/
+
+.chapter-link {
+    font-size: 1.15em;
+}
+
+a.active {
+    color: black;
+}
+
+.menu-root li:not(.active) .menu-sub{
+    display: none;
+}
+
+li.active .chapter-link {
+    color: black;
+}
+
+
+</style></head><body><h1>DocWhatttt</h1><div class="sidebar"><ul class="menu-root menu-chapters"><li><a class="chapter-link" href="week-1.html">Week 1</a><ul class="menu-sub"><li><a class="section-link" href="#Basic-string">Basic string</a></li><li><a class="section-link" href="#Defining-and-printing-variables">Defining and printing variables</a></li><li><a class="section-link" href="#Basic-operations">Basic operations</a></li><li><a class="section-link" href="#Lists">Lists</a></li><li><a class="section-link" href="#List-indexing">List indexing</a></li><li><a class="section-link" href="#List-indexing-(2)">List indexing (2)</a></li><li><a class="section-link" href="#Importing-(1)">Importing (1)</a></li><li><a class="section-link" href="#Importing-(2)">Importing (2)</a></li></ul></li><li class="active"><a class="chapter-link" href="week-2.html">Week 2</a><ul class="menu-sub"><li><a class="section-link" href="#String-Methods">String Methods</a></li><li><a class="section-link" href="#String-Methods-and-Lists">String Methods and Lists</a></li><li><a class="section-link" href="#Dictionaries">Dictionaries</a></li><li><a class="section-link" href="#Modifying-a-List">Modifying a List</a></li><li><a class="section-link" href="#Modifying-a-Dictionary">Modifying a Dictionary</a></li></ul></li></ul></div><div class="container with-sidebar" id="docwhat"><h2><a name="String-Methods"></a>String Methods</h2><div class="assignment"></div><div class="dc-lite-example"><div data-datacamp-exercise data-lang="python"><code data-type="pre-exercise-code">
+</code><code data-type="sample-code">names = &quot;amy greg todd&quot;
+
+
+</code><code data-type="solution">names = &quot;amy greg todd&quot;
+
+names.split(&quot; &quot;)
+</code><code data-type="sct">Ex().test_function_v2('names.split')
+</code><div data-type="hint">
+
+</div></div><div class="instructions"><h3>Instructions</h3><ul>
+<li>Use the string&#39;s spaces to split it up</li>
+</ul>
+</div></div><h2><a name="String-Methods-and-Lists"></a>String Methods and Lists</h2><div class="assignment"></div><div class="dc-lite-example"><div data-datacamp-exercise data-lang="python"><code data-type="pre-exercise-code">
+</code><code data-type="sample-code">names = &quot;amy greg todd&quot;
+
+# fill in the blank
+split_names = ___
+
+# add jane and pablo to names
+
+
+</code><code data-type="solution">names = &quot;amy greg todd&quot;
+
+# fill in the blank
+split_names = names.split(&quot; &quot;)
+
+split_names.append(&quot;jane&quot;)
+split_names.append(&quot;pablo&quot;)
+</code><code data-type="sct">Ex().check_object('split_names').is_instance(list)
+Ex().has_equal_value(&quot;By the end, does `split_names` have 5 entries?&quot;, expr_code = &quot;len('split_names')&quot;)
+Ex().test_object('split_names')
+</code><div data-type="hint">
+
+</div></div><div class="instructions"><h3>Instructions</h3><ul>
+<li>split the variable <code>names</code> by its spaces. Assign the result to <code>split_names</code></li>
+<li>add the names <code>&quot;jane&quot;</code> and <code>&quot;pablo&quot;</code> to the end of <code>split_names</code></li>
+</ul>
+</div></div><h2><a name="Dictionaries"></a>Dictionaries</h2><div class="assignment"></div><div class="dc-lite-example"><div data-datacamp-exercise data-lang="python"><code data-type="pre-exercise-code">
+</code><code data-type="sample-code">
+</code><code data-type="solution">d = {
+    'fruit': 'apple',
+    'calories': 100
+}
+</code><code data-type="sct">Ex().check_object('d').has_key('fruit').has_key('calories')
+</code><div data-type="hint">
+
+</div></div><div class="instructions"><h3>Instructions</h3><ul>
+<li>make a new dictionary, <code>d</code>, containing the keys <code>&quot;fruit&quot;</code> and <code>&quot;calories&quot;</code>.</li>
+</ul>
+<p>(Note, they can have any corresponding values)</p>
+</div></div><h2><a name="Modifying-a-List"></a>Modifying a List</h2><div class="assignment"></div><div class="dc-lite-example"><div data-datacamp-exercise data-lang="python"><code data-type="pre-exercise-code">
+</code><code data-type="sample-code">x = ['a', 'b', 'c', 'd']
+</code><code data-type="solution">x = ['a', 'b', 'c', 'd']
+x[1] = 'x'
+x[2] = 'z'
+</code><code data-type="sct">Ex().test_object('x')
+</code><div data-type="hint">
+
+</div></div><div class="instructions"><h3>Instructions</h3><ul>
+<li>replace <code>&#39;b&#39;</code> with <code>&#39;x&#39;</code>, and <code>&#39;c&#39;</code> with <code>&#39;z&#39;</code></li>
+</ul>
+</div></div><h2><a name="Modifying-a-Dictionary"></a>Modifying a Dictionary</h2><div class="assignment"></div><div class="dc-lite-example"><div data-datacamp-exercise data-lang="python"><code data-type="pre-exercise-code">
+</code><code data-type="sample-code">d = { 'id': 0, 'name': 'jane' }
+</code><code data-type="solution">d = { 'id': 0, 'name': 'jane' }
+
+d['name'] = 'susan'
+</code><code data-type="sct">Ex().test_object('d')
+</code><div data-type="hint">
+
+</div></div><div class="instructions"><h3>Instructions</h3></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/mode-python.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/mode-r.js"></script><script src="build.js"></script><script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script></body></html>
