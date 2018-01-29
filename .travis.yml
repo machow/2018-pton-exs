@@ -2,7 +2,7 @@ language: node_js
 node_js:
     - "7"
 install: >
-    git clone https://github.com/datacamp/docwhat.git@feat-normal-exs
+    git clone -b feat-normal-exs https://github.com/datacamp/docwhat.git
     && cd docwhat
     && npm install https://$GITHUB_TOKEN@github.com/datacamp/teach-parser.git
     && npm install
