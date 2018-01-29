@@ -19,6 +19,8 @@ skills: 2
 
 `@instructions`
 
+* check the type of `"a string"`
+
 `@hint`
 
 `@pre_exercise_code`
