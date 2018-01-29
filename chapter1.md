@@ -1,137 +1,266 @@
 ---
-title       : Insert the chapter title here
+title       : Week 1
 description : Insert the chapter description here
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
 ---
-## A really bad movie
-
-```yaml
-type: MultipleChoiceExercise
-lang: python
-xp: 50
-skills: 1
-key: c2f1037dc5
-```
-
-Have a look at the plot that showed up in the viewer to the right. Which type of movies have the worst rating assigned to them?
-
-`@instructions`
-- Long movies, clearly
-- Short movies, clearly
-- Long movies, but the correlation seems weak
-- Short movies, but the correlation seems weak
-
-`@hint`
-Have a look at the plot. Do you see a trend in the dots?
-
-`@pre_exercise_code`
-```{python}
-# The pre exercise code runs code to initialize the user's workspace.
-# You can use it to load packages, initialize datasets and draw a plot in the viewer
-
-import pandas as pd
-import matplotlib.pyplot as plt
-
-movies = pd.read_csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-plt.scatter(movies.runtime, movies.rating)
-plt.show()
-```
-
-`@sct`
-```{python}
-# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
-
-msg_bad = "That is not correct!"
-msg_success = "Exactly! The correlation is very weak though."
-test_mc(4, [msg_bad, msg_bad, msg_bad, msg_success])
-```
 
 ---
-## Plot the movies yourself
+## Basic string
 
 ```yaml
 type: NormalExercise
+key: e18675f236
 lang: python
 xp: 100
-skills: 1
-key: 3d0aad1129
+skills: 2
 ```
 
-Do you remember the plot of the last exercise? Let's make an even cooler plot!
-
-A dataset of movies, `movies`, is available in the workspace.
 
 `@instructions`
-- The first function, `np.unique()`, uses the `unique()` function of the `numpy` package to get integer values for the movie genres. You don't have to change this code, just have a look!
-- Import `pyplot` in the `matplotlib` package. Set an alias for this import: `plt`.
-- Use `plt.scatter()` to plot `movies.runtime` onto the x-axis, `movies.rating` onto the y-axis and use `ints` for the color of the dots. You should use the first and second positional argument, and the `c` keyword.
-- Show the plot using `plt.show()`.
 
 `@hint`
-- You don't have to program anything for the first instruction, just take a look at the first line of code.
-- Use `import ___ as ___` to import `matplotlib.pyplot` as `plt`.
-- Use `plt.scatter(___, ___, c = ___)` for the third instruction.
-- You'll always have to type in `plt.show()` to show the plot you created.
 
 `@pre_exercise_code`
 ```{python}
-import pandas as pd
-movies = pd.read_csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
 
-import numpy as np
 ```
 
 `@sample_code`
 ```{python}
-# Get integer values for genres
-_, ints = np.unique(movies.genre, return_inverse = True)
+"a string"
+```
 
-# Import matplotlib.pyplot
+`@solution`
+```{python}
+type("a string")
+```
+
+`@sct`
+```{python}
+Ex().test_function_v2('type', params = ['self'])
+```
+---
+## Defining and printing variables
+
+```yaml
+type: NormalExercise
+key: d54002a0b5
+lang: python
+xp: 100
+skills: 2
+```
 
 
-# Make a scatter plot: runtime on  x-axis, rating on y-axis and set c to ints
+`@instructions`
 
+* Add a comment to the code below
+* Define a variable `x`. Set it equal to `2`
+* print out x
 
-# Show the plot
+`@hint`
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
 
 ```
 
 `@solution`
 ```{python}
-# Get integer values for genres
-_, ints = np.unique(movies.genre, return_inverse = True)
+# Defining the variable x
+x = 2
 
-# Import matplotlib.pyplot
-import matplotlib.pyplot as plt
-
-# Make a scatter plot: runtime on  x-axis, rating on y-axis and set c to ints
-plt.scatter(movies.runtime, movies.rating, c=ints)
-
-# Show the plot
-plt.show()
+print(x)
 ```
 
 `@sct`
 ```{python}
-# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+Ex().test_student_typed('^\S*#', not_typed_msg = "Did you add a comment by starting a line with `#`?")
 
-test_function("numpy.unique",
-              not_called_msg = "Don't remove the call of `np.unique` to define `ints`.",
-              incorrect_msg = "Don't change the call of `np.unique` to define `ints`.")
+Ex().test_object('x')
 
-test_object("ints",
-            undefined_msg = "Don't remove the definition of the predefined `ints` object.",
-            incorrect_msg = "Don't change the definition of the predefined `ints` object.")
+Ex().test_function_v2('print', params = ['value'])
 
-test_import("matplotlib.pyplot", same_as = True)
+```
 
-test_function("matplotlib.pyplot.scatter",
-              incorrect_msg = "You didn't use `plt.scatter()` correctly, have another look at the instructions.")
+---
+## Basic operations
 
-test_function("matplotlib.pyplot.show")
+```yaml
+type: NormalExercise
+key: eb0d5ca694
+lang: python
+xp: 100
+skills: 2
+```
 
-success_msg("Great work!")
+
+`@instructions`
+
+* set `x` to be 5
+* set `y` to be 2
+* write in a comment what you expect x divided by y to be.
+* print `x` divided by `y`
+
+`@hint`
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+
+```
+
+`@solution`
+```{python}
+x = 5
+y = 2
+
+# x / y will be 2, since when python divides whole numbers, it rounds down
+
+print(x / y)
+```
+
+`@sct`
+```{python}
+
+```
+
+
+---
+## Lists
+
+```yaml
+type: NormalExercise
+key: 8e146cf9b6
+lang: python
+xp: 100
+skills: 2
+```
+
+
+`@instructions`
+
+* define `cities` to be a list with 3 entries
+
+`@hint`
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+cities = 
+```
+
+`@solution`
+```{python}
+cities = ['new york', 'princeton', 'philadelphia']
+```
+
+`@sct`
+```{python}
+Ex().check_object('cities').is_instance(list)
+Ex().has_equal_value("Did you add three entries to `cities`?", expr_code = "len(cities)")
+```
+
+---
+## Importing (1)
+
+```yaml
+type: NormalExercise
+key: 71cf4495b4
+lang: python
+xp: 100
+skills: 2
+```
+
+
+`@instructions`
+
+* import the `math` library
+* use the `abs` function from that library (try it on a number)
+
+`@hint`
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+
+```
+
+`@solution`
+```{python}
+import math
+abs(-2)
+```
+
+`@sct`
+```{python}
+Ex().test_import('math')
+Ex().test_function_v2('abs')
+```
+
+
+---
+## Importing (2)
+
+```yaml
+type: NormalExercise
+key: f3c5d745cc
+lang: python
+xp: 100
+skills: 2
+```
+
+
+`@instructions`
+
+* import `glob` from the `glob` library
+
+`@hint`
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+# import glob func from glob library
+
+# use to see files in directory
+# * is a wildcard, that matches anything
+glob('*.ipynb')
+
+```
+
+`@solution`
+```{python}
+# import glob func from glob library
+from glob import glob
+
+# use to see files in directory
+# * is a wildcard, that matches anything
+glob('*.ipynb')
+```
+
+`@sct`
+```{python}
+Ex().test_import('glob')
 ```
