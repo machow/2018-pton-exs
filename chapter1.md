@@ -174,6 +174,47 @@ Ex().check_object('cities').is_instance(list)
 Ex().has_equal_value("Did you add three entries to `cities`?", expr_code = "len(cities)")
 ```
 
+
+---
+## List indexing
+
+```yaml
+type: NormalExercise
+key: 01f9e51b07
+lang: python
+xp: 100
+skills: 2
+```
+
+
+`@instructions`
+
+* print out the first entry of `x`
+
+`@hint`
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+x = ['a', 'b', 'c']
+```
+
+`@solution`
+```{python}
+x = ['a', 'b', 'c']
+
+print(x[0])
+```
+
+`@sct`
+```{python}
+Ex().test_function_v2('print')
+Ex().test_output_contains("'a'", no_output_message = "Did you get the first entry ('a')?")
+```
 ---
 ## Importing (1)
 
