@@ -215,6 +215,48 @@ print(x[0])
 Ex().test_function_v2('print')
 Ex().test_output_contains("'a'", no_output_message = "Did you get the first entry ('a')?")
 ```
+
+---
+## List indexing (2)
+
+```yaml
+type: NormalExercise
+key: 951e7aece9
+lang: python
+xp: 100
+skills: 2
+```
+
+
+`@instructions`
+
+* use indexing with `:` to get the 2nd to 3rd items from the list. That is, 'b' and 'c'.
+
+(Note, this exercise is not automatically graded. You may view the solution to see the answer)
+
+`@hint`
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+x = ['a', 'b', 'c', 'd', 'e']
+```
+
+`@solution`
+```{python}
+x = ['a', 'b', 'c', 'd', 'e']
+x[1:3]
+
+```
+
+`@sct`
+```{python}
+
+```
 ---
 ## Importing (1)
 
